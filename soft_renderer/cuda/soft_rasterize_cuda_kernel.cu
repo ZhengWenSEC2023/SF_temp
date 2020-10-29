@@ -187,8 +187,8 @@ __device__ __forceinline__ void normal_face(const scalar_t *face, scalar_t *norm
     nx = (nz > 0) ? nx : -nx;
     ny = (nz > 0) ? ny : -ny;
     nz = (nz > 0) ? nz : -nz;
-    normal[0] = nx * 0.5 + 0.5;
-    normal[1] = ny * 0.5 + 0.5;
+    normal[0] = -nx * 0.5 + 0.5;
+    normal[1] = -ny * 0.5 + 0.5;
     normal[2] = nz * 0.5 + 0.5;
 }
 
