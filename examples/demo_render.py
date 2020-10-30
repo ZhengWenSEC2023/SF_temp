@@ -48,7 +48,7 @@ def main():
         loop.set_description('Drawing rotation')
         renderer.transform.set_eyes_from_angles(camera_distance, elevation, azimuth)
         images = renderer.render_mesh(mesh)
-        image = images.detach().cpu().numpy()[0].transpose((1, 2, 0))
+        image = images[1].detach().cpu().numpy()[0].transpose((1, 2, 0))
         writer.append_data((255*image).astype(np.uint8))
     writer.close()
 
@@ -63,7 +63,7 @@ def main():
         renderer.set_sigma(10**(gamma_pow - 1))
         loop.set_description('Drawing blurring')
         images = renderer.render_mesh(mesh)
-        image = images.detach().cpu().numpy()[0].transpose((1, 2, 0))
+        image = images[1].detach().cpu().numpy()[0].transpose((1, 2, 0))
         writer.append_data((255*image).astype(np.uint8))
     writer.close()
 
@@ -77,7 +77,7 @@ def main():
         renderer.set_sigma(10**(gamma_pow - 1))
         loop.set_description('Drawing diff_sigma')
         images = renderer.render_mesh(mesh)
-        image = images.detach().cpu().numpy()[0].transpose((1, 2, 0))
+        image = images[1].detach().cpu().numpy()[0].transpose((1, 2, 0))
         writer.append_data((255*image).astype(np.uint8))
     writer.close()
 
@@ -91,7 +91,7 @@ def main():
         renderer.set_gamma(10**(gamma_pow - 1))
         loop.set_description('Drawing diff_gamma')
         images = renderer.render_mesh(mesh)
-        image = images.detach().cpu().numpy()[0].transpose((1, 2, 0))
+        image = images[1].detach().cpu().numpy()[0].transpose((1, 2, 0))
         writer.append_data((255*image).astype(np.uint8))
     writer.close()
 
