@@ -71,13 +71,13 @@ class SoftRasterizeFunction(Function):
                                                        sigma_val, ctx.func_dist_type, ctx.dist_eps,
                                                        gamma_val, ctx.func_rgb_type, ctx.func_alpha_type,
                                                        ctx.texture_type, fill_back)
-        depth_maps.require_grad_(False)
-        normal_maps.require_grad_(False)
+        ctx.mark_non_differentiable(depth_maps)
+        ctx.mark_non_differentiable(normal_maps)
         ctx.save_for_backward(face_vertices, textures, soft_colors, faces_info, aggrs_info)
         return soft_colors, depth_maps, normal_maps
 
     @staticmethod
-    def backward(ctx, grad_soft_colors):
+    def backward(ctx, grad_soft_colors, grad_depth_maps, grad_normal_maps):
 
         face_vertices, textures, soft_colors, faces_info, aggrs_info = ctx.saved_tensors
         image_size = ctx.image_size
