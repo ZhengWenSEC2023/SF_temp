@@ -29,8 +29,10 @@ DEMO_FREQ = 1000
 SAVE_FREQ = 10000
 RANDOM_SEED = 0
 
-MODEL_DIRECTORY = 'data/results/models'
-DATASET_DIRECTORY = '/mnt/zhengwen/model_synthesis/SF_temp'
+# MODEL_DIRECTORY = 'data/results/models'
+MODEL_DIRECTORY = "/home/ubuntu"
+# DATASET_DIRECTORY = '/mnt/zhengwen/model_synthesis/SF_temp'
+DATASET_DIRECTORY = "/home/ubuntu"
 
 IMAGE_SIZE = 64
 SIGMA_VAL = 1e-4

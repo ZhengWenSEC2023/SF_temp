@@ -33,17 +33,14 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "7"
 RENDER_IMAGE_NAME_RGB = 'RGB'
 RENDER_IMAGE_NAME_D = 'depth'
 RENDER_IMAGE_NAME_NORMAL = 'normal'
-camera_distance = 3.5
+camera_distance = 10
 elevation = 30
 azimuth = 0
 
-obj_file_i = os.path.join("/mnt/zhengwen/model_synthesis/SF_temp/data/obj/sphere/cube.obj")
-img_file_rgb = os.path.join("/mnt/zhengwen/model_synthesis/SF_temp/data/obj/sphere/cube.obj",
-                            RENDER_IMAGE_NAME_RGB)
-img_file_depth = os.path.join("/mnt/zhengwen/model_synthesis/SF_temp/data/obj/sphere/cube.obj",
-                              RENDER_IMAGE_NAME_D)
-img_file_normal = os.path.join("/mnt/zhengwen/model_synthesis/SF_temp/data/obj/sphere/cube.obj",
-                               RENDER_IMAGE_NAME_NORMAL)
+obj_file_i = os.path.join("/mnt/zhengwen/model_synthesis/SF_temp/data/obj/sphere/sphere_642.obj")
+img_file_rgb = "/mnt/zhengwen/model_synthesis/SF_temp/data/obj/sphere/sphere_642.obj" + RENDER_IMAGE_NAME_RGB
+img_file_depth = "/mnt/zhengwen/model_synthesis/SF_temp/data/obj/sphere/sphere_642.obj" + RENDER_IMAGE_NAME_D
+img_file_normal = "/mnt/zhengwen/model_synthesis/SF_temp/data/obj/sphere/sphere_642.obj" + RENDER_IMAGE_NAME_NORMAL
 mesh = sr.Mesh.from_obj(obj_file_i)
 renderer = sr.SoftRenderer(camera_mode='look_at')
 
