@@ -23,6 +23,8 @@ NUM_ITERATIONS = 250000
 
 LAMBDA_LAPLACIAN = 5e-3
 LAMBDA_FLATTEN = 5e-4
+LAMBDA_NORMAL = 5e-3
+LAMBDA_DEPTH = 5e-3
 
 PRINT_FREQ = 100
 DEMO_FREQ = 1000
@@ -57,6 +59,8 @@ parser.add_argument('-lrt', '--lr-type', type=str, default=LR_TYPE)
 
 parser.add_argument('-ll', '--lambda-laplacian', type=float, default=LAMBDA_LAPLACIAN)
 parser.add_argument('-lf', '--lambda-flatten', type=float, default=LAMBDA_FLATTEN)
+parser.add_argument('-ln', '--lambda-normal', type=float, default=LAMBDA_NORMAL)
+parser.add_argument('-ld', '--lambda-depth', type=float, default=LAMBDA_DEPTH)
 parser.add_argument('-ni', '--num-iterations', type=int, default=NUM_ITERATIONS)
 parser.add_argument('-pf', '--print-freq', type=int, default=PRINT_FREQ)
 parser.add_argument('-df', '--demo-freq', type=int, default=DEMO_FREQ)
