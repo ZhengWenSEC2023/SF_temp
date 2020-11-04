@@ -162,6 +162,7 @@ def train():
             srf.save_obj(demo_path, demo_v[0], demo_f[0])
 
             print(type(render_images[0]))
+            print(render_images[0].shape)
             imageio.imsave(os.path.join(image_output, '%07d_fake.png' % i), img_cvt(render_images[0][0]))
             imageio.imsave(os.path.join(image_output, '%07d_input.png' % i), img_cvt(images_a[0]))
 
