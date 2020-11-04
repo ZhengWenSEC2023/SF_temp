@@ -73,10 +73,7 @@ class SoftRasterizeFunction(Function):
                                                        ctx.texture_type, fill_back)
         ctx.mark_non_differentiable(depth_maps)
         ctx.mark_non_differentiable(normal_maps)
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
         ctx.save_for_backward(face_vertices, textures, soft_colors, faces_info, aggrs_info)
         return soft_colors, depth_maps, normal_maps
 
