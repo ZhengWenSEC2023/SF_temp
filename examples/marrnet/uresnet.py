@@ -3,6 +3,7 @@ from torch import nn
 from revresnet import revuresnet18, resnet18
 
 
+
 class Net(nn.Module):
     """
     Used for RGB to 2.5D maps

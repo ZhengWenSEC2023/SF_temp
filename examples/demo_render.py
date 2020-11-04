@@ -48,7 +48,7 @@ def main():
         loop.set_description('Drawing rotation')
         renderer.transform.set_eyes_from_angles(camera_distance, elevation, azimuth)
         images = renderer.render_mesh(mesh)
-        image = images[1].detach().cpu().numpy()[0].transpose((1, 2, 0))
+        image = images[2].detach().cpu().numpy()[0].transpose((1, 2, 0))
         writer.append_data((255*image).astype(np.uint8))
     writer.close()
 
