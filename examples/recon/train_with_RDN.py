@@ -2,7 +2,7 @@ import argparse
 
 import torch
 import numpy as np
-from losses import multiview_iou_loss
+from losses import multiview_iou_loss, multiview_mse_loss
 from utils import AverageMeter, img_cvt
 import soft_renderer as sr
 import soft_renderer.functional as srf
